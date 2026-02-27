@@ -48,3 +48,10 @@ sections.forEach((section) => sectionObserver.observe(section));
 if (sections[0]) {
   markActive(sections[0].id);
 }
+
+const siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+  window.addEventListener('scroll', () => {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+}
